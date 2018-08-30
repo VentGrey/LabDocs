@@ -1,1 +1,7 @@
-site_name: My Docs
+site_name: Future Lab Docs
+pages:
+  - Inicio: index.md
+  - About: about.md
+  - Reglamento: reglas.md
+  - Organigrama: organigrama.md
+  - Resumen-Ejecutivo: resumen.md
