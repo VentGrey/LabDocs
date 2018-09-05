@@ -1,4 +1,6 @@
 site_name: Future Lab Docs
+theme:
+  name: 'material'
 pages:
   - Inicio: index.md
   - About: about.md
