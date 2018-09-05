@@ -1,7 +1,7 @@
 site_name: Future Lab Docs
 theme:
   name: 'material'
-pages:
+nav:
   - Inicio: index.md
   - About: about.md
   - Reglamento: reglas.md
