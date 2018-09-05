@@ -1,4 +1,5 @@
-# Welcome to MkDocs
+# ¡Bienvenido a los documentos oficiales de Future Lab!
+![Logo de Future Lab](image/main-logo.png)
 
 For full documentation visit [mkdocs.org](http://mkdocs.org).
 
