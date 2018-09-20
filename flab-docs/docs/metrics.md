@@ -258,4 +258,12 @@ int main() {
 } 
 ```
 
+### 4- Nombres
+
+C es un lenguaje robusto y como lenguaje robusto, los nombres de tus
+variables deberán ser robustos también, los programadores en C no utilizan
+nombres de variables como: `EstoEsUnContadorTemporal`. Un programador de C
+llama a su variable `tmp`, que es muy fácil de escribir y no más difícil de
+entender.
+
 
