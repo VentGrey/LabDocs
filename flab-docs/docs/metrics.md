@@ -235,4 +235,27 @@ No incluya espacios en los operadores unarios de incremento y decremento:
 
 Y no incluya espacios alrededor de los operadores `.` y `->`.
 
+No deje espacios en blanco al final de las líneas. Algunos editores con
+indentación "`inteligente`" van a insertar un espacio en blando al inicio de
+las nuevas líneas, asi que usted podrá comenzar a tirar código de inmediato.
+PERO, algunos editores no eliminan éste espacio y uno termina sin agregar
+código en la línea completa, por lo que uno termina con líneas con espacios
+sobrantes:
+
+> Utilice la selección de su cursos para notar el siguiente ejemplo:
+
+```c
+int main() {
+        printf("Soy un código sin espacios innecesarios :D");
+}
+```
+
+VS
+
+```c
+int main() { 
+        printf("Yo tengo espacios innecesarios :("); 
+} 
+```
+
 
