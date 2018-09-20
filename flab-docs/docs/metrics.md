@@ -73,7 +73,7 @@ la línea y colocar la llave de cierre al inicio:
 
 ```c
 int main() {
-        printf(" Las llaves cómo se ven aquí :) ");
+        printf("Las llaves cómo se ven aquí :)");
 }
 ```
 
@@ -188,5 +188,51 @@ Pero no en las palabras anteriormente mencionadas
 ```c
 s = sizeof(struct file);
 ```
+
+**NO** agregue espacios dentro de las expresiones con paréntesis:
+**El siguiente ejemplo es lo que NO debe hacer**
+
+```c
+s = sizeof( struct file );
+```
+
+Cuando declare punteros utilice el operador `*` adyacente a el nombre del dato
+o nombre de la funcion y no al nombre del tipo:
+
+Bien:
+
+```c
+char *puntero;
+long long super_punteros(char *puntero **punteroapuntero);
+char *punteros_raros(subpuntero *s);
+```
+
+Mal:
+
+```c
+char* puntero;
+long long super_punteros(char* puntero **punteroapuntero);
+char* punteros_raros(subpuntero *s);
+```
+
+Utilice un espacio en cada lado de los operadores binarios y ternarios:
+
+```c
+= + - < > * / % | & ^ <= >= == != ? :
+```
+
+pero no incluya un espacio después de los operadoes unarios:
+
+```c
+& * + - ~ ! sizeof typeof alignof __attribute__ defined
+```
+
+No incluya espacios en los operadores unarios de incremento y decremento:
+
+```c
+++ --
+```
+
+Y no incluya espacios alrededor de los operadores `.` y `->`.
 
 
