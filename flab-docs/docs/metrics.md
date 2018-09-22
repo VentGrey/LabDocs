@@ -421,4 +421,67 @@ err_free_foo:
 Igual evite confiarse y trate de simular errores para probar TODOS sus caminos
 de salida.
 
+### 8- Comentarios
+
+Los comentarios en el código siempre son buenos, aunque siempre existe el
+riesgo de sobre-comentar un código.
+**NUNCA** trate de explicar cómo funciona su código en un comentario:
+es mucho mejor escribir el código de manera en la que la funcionalidad sea
+obvia, ademas es una pérdida de tiempo explicar mal código.
+
+Generalemente usted querrá explicar **QUE** hace su código y no **COMO**
+lo hace. Además, evite poner comentarios dentro del cuerpo de una función:
+
+Si la función es tan compleja al punto en el que tiene que separarla y poner
+comentarios para cada parte, probablemente necesite leer el capítulo 6 por un
+buen rato antes de continuar con su código. Puede hacer pequeños comentarios
+para notas o para advertir acerca de algo genial (o muy feo), pero evite
+excederse. En su lugar ponga los comentarios antes de la función, indicando
+que hace y posiblemente por que lo hace.
+
+Para comentarios multilinea el estilo preferente es:
+
+```c
+/*
+* Este es el estilo preferido para
+* los comentarios multilinea
+* dentro de Future Lab
+* Y los códigos en C que se hagan
+*
+* Descripción: Un montón de asteriscos en el lado
+* izquierdo de la pantalla.
+*/
+```
+
+También es importante comentar los datos, sean tipos básicos o derivados.
+
+
+### 9- Hiciste un atascadero...
+
+Está bien, todos lo hacemos. Probablemente tus queridos amigos te han dicho que
+editores como `Gnu EMACS` o `GitHub Atom` formatean el código de C de manera
+automática y probablemente te hayas dado cuenta de que efectivamente lo hacen
+pero los valores por defecto que usan van mas allá de lo "horrible". De hecho
+son peor que escribir con la cabeza, un número infinito de simios escribiendo
+en éstos editores con sus valores por defecto jamás harían un buen programa.
+
+> Lo mismo aplica a cualquier editor del cual se conserven sus valores de
+> edición por defecto.
+
+Así que usted puede eliminar `Atom` o `Gnu EMACS` o simplemente cambiar sus
+valores por unos mas "correctos".
+
+Incluso si falla en hacer que EMACS o Atom hagan un buen trabajo no todo está
+perdido, puede usar `indent`.
+
+`GNU indent` tiene las mismas opciones feas de `GNU emacs`. Sin embargo indent
+es dócil y fácil de modificar ya que los autores de éste saben reconocer la
+autoridad de K&R así que, si le damos al programa las opciones `-kr -i8` éste
+indentará nuestro código de una manera correcta.
+
+`indent` tiene un montón de opciones, sobre todo cuando se refiere a
+re-formatear el código, solo hace falta un vistazo al manual.
+
+Recuerde que `indent` no es una solución para **Ser un mal programador**.
+
 
