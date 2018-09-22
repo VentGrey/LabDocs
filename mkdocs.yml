@@ -1,0 +1,12 @@
+site_name: Future Lab Docs
+theme:
+  name: 'material'
+markdown_extensions:
+  - codehilite
+nav:
+  - Inicio: 00-inicio.md
+  - About: 01-about.md
+  - Reglamento: 02-reglas.md
+  - Organigrama: 03-organigrama.md
+  - Resumen-Ejecutivo: 04-resumen.md
+  - Metrics: 05-metrics.md

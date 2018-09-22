@@ -483,3 +483,10 @@ indentará nuestro código de una manera correcta.
 re-formatear el código, solo hace falta un vistazo al manual.
 
 Recuerde que `indent` no es una solución para **Ser un mal programador**.
+
+## Python 3
+
+### 1- En progreso
+
+Uno de nuestros pythoners de Future Lab propondrá un estilo de código
+uniforme y legible para todos.
