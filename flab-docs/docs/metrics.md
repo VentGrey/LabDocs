@@ -173,7 +173,7 @@ if (condición) {
         otracosa();
 }
 ```
-#### 3.1 - Espacios
+#### 3.1- Espacios
 
 Use un espacio después de (la mayoría) de las palabras reservadas de C.
 
@@ -265,5 +265,37 @@ variables deberán ser robustos también, los programadores en C no utilizan
 nombres de variables como: `EstoEsUnContadorTemporal`. Un programador de C
 llama a su variable `tmp`, que es muy fácil de escribir y no más difícil de
 entender.
+
+**Sin embargo**, aunque los nombres con letras mezcladas (nomeclatura Camello)
+se ven mal, los nombres descriptivos para las variables son un *must*.
+
+Llamar a una función o variable global `foo` es una ofensa.
+
+Las variables globales (úselas solo cuando **realmente** las necesite)
+deberán tener nombres descriptivos, al igual que las funciones globales.
+
+Si usted tiene una función que cuenta el número de usuarios activos, deberá
+de llamarla `count_active_users()` o de una forma similar. **NO** deberá
+llamarla `cntactsrs()`.
+
+Las variables locales deberán de tener nombres cortos y directos al punto. Si
+usted tiene un contador con de enteros la variable normalmente deberia de
+llamarse `i`, llamarla `contador_ciclo` sería ineficiente (por no decir tonto)
+. simplemente `tmp`, ese sería un buen nombre de variable para un temporal.
+
+Si tiene miedo de mezclar nombres de variables entonces tiene otro problema.
+
+### 5- Typedef
+
+Por favor no utilice cosas como `vps_t`. Es un **horror** utilizar typedef para
+estructuras y punteros, cuando vea un:
+
+`vps_t a;`
+
+en el código fuente significa:
+
+`struct virtual_container *a;`
+
+y no hace falta explicar que significa `a`.
 
 
