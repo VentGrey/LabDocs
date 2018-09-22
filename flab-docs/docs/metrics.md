@@ -298,4 +298,56 @@ en el código fuente significa:
 
 y no hace falta explicar que significa `a`.
 
+Normalmente se piensa que los typedefs `mejoran la experiencia de lectura`,
+aunque realmente se utilizan para:
+    * Objetos totalmente opacos (donde typedef es para esconder el interior)
+    * Tipos de enteros claros, para evitar confusiones entre `int` y `long`.
+    * Nuevos tipos idénticos a los de C99.
+    * Son seguros para el userspace
+
+### 6- Funciones
+
+El nombre de las funciones deberá de ser corto y preciso. Deberán de cabe
+dentro de una o dos pantallas de texto (la pantalla del ISO/ANSI es de 80x24
+como sabemos) y deberá hacer una sola cosa y hacerla bien.
+
+La longitud máxima de una función es inversamente proporcional a la
+complejidad y el nivel de indentación de dicha funcion. Asi que si tienes una
+función conceptualmente simple que es una sentencia `case` larga pero simple
+donde tienes que hacer muchas evaluaciones pequeñas está bien tener una
+función larga.
+
+Pero, si tuviése una función mas compleja y sospechas que un estudiante de
+tu universidad un poco menos "agraciado" que tú pueda tener problemas
+entendiendo el código de la función es recomendable que se apegue al máximo
+con el límite. Utilice funciones "ayudantes" con nombres descriptivos.
+
+Otra forma de "medir" una función es por el número de variables locales.
+Normalmente no se deberían de exceder las 5-10 variables locales, en caso
+contrario algo estará haciendo mal. Reformule su función, rómpala en pedazos
+mas pequeños.
+
+> Un cerebro humano puede rastrear fácilmente a 7 cosas diferentes, una mas
+> y comienza a confundirse.
+
+Usted puede sentir que es brillante, pero quizá le gustaría saber que hizo
+hace dos semanas.
+
+En el código fuente, separe las funciones con una línea en blanco. Si la
+función es exportada entonces el macro `EXPORT` deberia seguir inmediatamente
+despues de la llave de cierre, ej:
+
+```c
+int system_is_up(void)
+{
+        return system_state == SYSTEM_RUNNING;
+}
+EXPORT_SYMBOL (system_is_up);
+```
+
+En los prototipos de las funciones, incluya los nombres de los parámetros con
+los tipos de dato. Aunque ésto no es requerido por C, es preferible dentro
+de los sistemas tipo Unix porque es una manera mas simple de proporcionale
+información al lector.
+
 
