@@ -4,10 +4,10 @@ En esta página se mostrarán los estandares de código utilizados por Future La
 
 Los lenguajes soportados (actualmente) por miembros de Future Lab son:
 
- * C (Cristofer Nava, Oliver López, Omar Purata).
- * Python 3 (Luis Sustaita, Rodolfo Ferro, Ricardo Mirón, Anthony Smith, etc.)
- * Rust (Omar Purata)
- * JavaScript (Oliver López, Adolfo Ramírez)
+ * C
+ * Python 3
+ * Rust
+ * JavaScript
 
 ## ¿Por qué un estándar?
 
