@@ -350,4 +350,75 @@ los tipos de dato. Aunque ésto no es requerido por C, es preferible dentro
 de los sistemas tipo Unix porque es una manera mas simple de proporcionale
 información al lector.
 
+### 7- Salida de funciones centralizada
+
+Aunque sea muy odiado por los buenos programadores, el equivalente de la
+sentencia `goto` usada frecuentemente por los compiladores en la forma de
+una instrucción de salto sin condición.
+
+La sentencia `goto` es útil cuando la función tiene múltiples salidas y
+el mismo trabajo de mantenimiento (como limpieza de memoria) se necesita hacer
+
+Si no se necesita hacer limpieza alguna simplemente salga de la función.
+
+Elija nombres de identificador que indique qué hace `goto` o porque `goto`
+existe. Un buen nombre sería `out_free_buffer:` si es que el `goto` libera
+el buffer. **EVITE** utilizar nombres como los de GW-BASIC por ejemplo:
+`err1:` y `err2:`. porque tendría que re-enumerarlos si es que agrega o
+elimina caminos de salida.
+
+Las justificaciones para usar `goto` son:
+ * Las sentencias incondicionales son mas fáciles de leer y seguir.
+ * Se reduce el anidado.
+ * Los errores que se dan al no actualizar puntos de salida cuando se hacen modificaciones se evitan.
+ * Le ahorra el trabajo al compilador de optimizar código redundante.
+
+```c
+int func(int a)
+{
+        int resultado = 0;
+        char *buffer;
+
+        buffer = kmalloc(SIZE, GFP_KERNEL);
+        if (!buffer)
+                return -ENOMEM;
+
+        if (condicional1) {
+                while (loop1) {
+                        ...
+                }
+                result = 1;
+                goto out_free_buffer;
+        }
+        ...
+out_free_buffer:
+        kfree(buffer);
+        return resultado;
+}
+```
+
+Un tipo de error común a tener en cuenta es el bug `one err` que se ve así:
+
+```c
+err:
+        kfree(foo->bar);
+        kfree(foo);
+        return ret;
+```
+
+El error de éste código es que algunos caminos de salida para `foo` son `NULL`.
+Normalmente la manera de arreglar ésto es "romper" el código en 2 identificadores
+de error `err_free_bar:` y `err_free_foo:`:
+
+```c
+err_free_bar:
+        kfree(foo->bar);
+err_free_foo:
+        kfree(foo);
+        return ret;
+```
+
+Igual evite confiarse y trate de simular errores para probar TODOS sus caminos
+de salida.
+
 
