@@ -483,5 +483,3 @@ indentará nuestro código de una manera correcta.
 re-formatear el código, solo hace falta un vistazo al manual.
 
 Recuerde que `indent` no es una solución para **Ser un mal programador**.
-
-
